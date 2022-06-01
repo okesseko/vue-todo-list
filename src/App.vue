@@ -46,6 +46,7 @@ watch(
 </script>
 
 <template>
+  <h1>Vue3 todo list practice</h1>
   <Header :addDataToList="addDataToList" />
   <List :list="listData" :removeData="removeData" />
   <Footer
