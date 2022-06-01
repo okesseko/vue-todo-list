@@ -2,13 +2,20 @@
 import Header from "./components/Header.vue";
 import List from "./components/List.vue";
 import Footer from "./components/Footer.vue";
-import { ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 
-let listData = ref([
+const DEFAULT_LIST_DATA = [
   { id: 1, text: "吃飯", isCompleted: false },
   { id: 2, text: "打掃", isCompleted: true },
   { id: 3, text: "喝水", isCompleted: false },
-]);
+];
+
+let listData = ref([]);
+
+onMounted(() => {
+  const storageData = localStorage.getItem("list_data");
+  listData.value = storageData ? JSON.parse(storageData) : DEFAULT_LIST_DATA;
+});
 
 const addDataToList = (data) => {
   listData.value.unshift(data);
@@ -28,6 +35,14 @@ const selectAll = (isSelected) => {
     data.isCompleted = isSelected;
   });
 };
+
+watch(
+  listData,
+  (val) => {
+    localStorage.setItem("list_data", JSON.stringify(val));
+  },
+  { deep: true }
+);
 </script>
 
 <template>
