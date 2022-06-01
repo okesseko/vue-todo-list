@@ -1,7 +1,20 @@
-# Vue 3 + Vite
+# Vue 3 todo list practice
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![banner](/docs/banner.png)
 
-## Recommended IDE Setup
+This is a todo list build by the vue3 + vite.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Although it is not my first time write the vue3. It still a good practice for me who wrote build a [personal website](https://github.com/okesseko/personal-website-vue) by the vue serval years ago.   
+
+
+## Getting Started
+Firstly, you will need to clone the repo locally. Once you have it ready navigate into the directory and run the following commands:
+
+1. `npm install` or `yarn` (if you use yarn)
+2. `npm run dev` or `yarn dev` (if you use yarn)
+
+After you start the project. It will automatically open on port **3000**.<br/>
+You can open it by linking to url `http://localhost:3000` 
+
+## murmur
+Vue3 is very similar to React. Especially using function way to declare variable and life state. It's easy to learn for someone like me who uses react to develop websites for many years
