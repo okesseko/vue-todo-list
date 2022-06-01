@@ -41,16 +41,4 @@ li:hover {
 label {
   cursor: pointer;
 }
-input {
-  margin-right: 8px;
-}
-button {
-  border: 1px solid #a17c6b;
-  border-radius: 4px;
-  padding: 4px;
-  cursor: pointer;
-}
-button:hover {
-  color: #a17c6b;
-}
 </style>

@@ -54,12 +54,5 @@ button {
   margin: 8px;
   font-size: 20px;
   padding: 6px 12px;
-  border: 2px solid #a17c6b;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  color: #a17c6b;
 }
 </style>
