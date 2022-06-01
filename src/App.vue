@@ -2,28 +2,42 @@
 import Header from "./components/Header.vue";
 import List from "./components/List.vue";
 import Footer from "./components/Footer.vue";
-import { reactive, ref } from "vue";
+import { ref } from "vue";
 
-let listData = reactive([
+let listData = ref([
   { id: 1, text: "吃飯", isCompleted: false },
   { id: 2, text: "打掃", isCompleted: true },
   { id: 3, text: "喝水", isCompleted: false },
 ]);
 
 const addDataToList = (data) => {
-  listData.unshift(data);
+  listData.value.unshift(data);
 };
 
 const removeData = (index) => {
-  console.log("remove");
-  listData.splice(index, 1);
+  listData.value.splice(index, 1);
+};
+
+const removeSelectedData = () => {
+  console.log(listData.value.filter((data) => !data.isCompleted));
+  listData.value = listData.value.filter((data) => !data.isCompleted);
+};
+
+const selectAll = (isSelected) => {
+  listData.value.forEach((data) => {
+    data.isCompleted = isSelected;
+  });
 };
 </script>
 
 <template>
   <Header :addDataToList="addDataToList" />
   <List :list="listData" :removeData="removeData" />
-  <Footer />
+  <Footer
+    :list="listData"
+    :onSelect="selectAll"
+    :removeSelectedData="removeSelectedData"
+  />
 </template>
 
 <style>
@@ -45,5 +59,17 @@ body {
 
   text-align: center;
   color: #1f2421;
+}
+button {
+  border: 1px solid #a17c6b;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+}
+button:hover {
+  color: #a17c6b;
+}
+input[type="checkbox"] {
+  margin-right: 8px;
 }
 </style>
